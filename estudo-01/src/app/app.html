@@ -1,0 +1,27 @@
+
+<h2>Tabuada Angular</h2>
+<hr>
+<p>Numero: 
+     <select [(ngModel)]="numeroSelecionado">
+
+        <option [ngValue]="0">Selecione um numero</option>
+            @for (numero of numeros; track numero) {
+                <option [ngValue]="numero"> {{numero}} </option>
+
+            }
+     </select>
+</p>
+
+@if (numeroSelecionado > 0 ) {
+    <hr>
+    Resultado
+    <ul>
+        @for (numero of numeros; track numero ) {
+            <li>
+                {{numero}} + {{numeroSelecionado}} = {{numero + numeroSelecionado}}
+            </li>
+        }
+
+
+    </ul>
+}
